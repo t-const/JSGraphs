@@ -23,6 +23,9 @@ const myChart = new Chart(ctx, {
 // Fetch initial data from the server
 fetchData();
 
+// Set interval to fetch updated data every 5 seconds (adjust as needed)
+setInterval(fetchData, 5000);
+
 function fetchData() {
     fetch('/api/data')
         .then(response => response.json())
