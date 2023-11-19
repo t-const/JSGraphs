@@ -1,0 +1,45 @@
+/* public/styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+#container {
+    display: flex;
+    flex-grow: 1; /* Allow the container to expand and fill available space */
+}
+
+canvas {
+    max-width: 70%; /* Set a maximum width for the graph */
+    margin-right: 20px; /* Add some space between the canvas and the form */
+}
+
+form {
+    display: flex; /* Use flexbox for horizontal layout */
+    flex-direction: column; /* Display children elements in a column */
+    max-width: 200px; /* Set a fixed width for the form */
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+button {
+    padding: 8px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
