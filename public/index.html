@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graph Display Example</title>
-    <!-- Include Chart.js library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <!-- Canvas element to render the chart -->
     <canvas id="myChart" width="400" height="200"></canvas>
 
-    <!-- JavaScript to create and update the chart -->
+    <form id="dataForm">
+        <label for="newLabel">Label:</label>
+        <input type="text" id="newLabel" required>
+        <label for="newValue">Value:</label>
+        <input type="number" id="newValue" required>
+        <button type="button" onclick="addData()">Add Data</button>
+    </form>
+
     <script src="script.js"></script>
 </body>
 </html>
