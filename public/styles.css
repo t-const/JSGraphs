@@ -1,5 +1,10 @@
 /* public/styles.css */
 
+.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     display: flex;

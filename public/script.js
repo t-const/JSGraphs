@@ -20,6 +20,27 @@ const myChart = new Chart(ctx, {
     },
 });
 
+let isDarkMode = false;
+
+function toggleDarkTheme() {
+    isDarkMode = !isDarkMode;
+    updateTheme();
+}
+
+function updateTheme() {
+    const body = document.body;
+    const canvas = document.getElementById('myChart');
+
+    if (isDarkMode) {
+        body.classList.add('dark-theme');
+        canvas.style.backgroundColor = '#222'; // Dark background color for the chart canvas
+    } else {
+        body.classList.remove('dark-theme');
+        canvas.style.backgroundColor = '#fff'; // Light background color for the chart canvas
+    
+    }
+}
+
 // Fetch initial data from the server
 fetchData();
 
