@@ -45,6 +45,36 @@ app.post('/api/data', (req, res) => {
     });
 });
 
+app.post('/api/data/clear', (req, res) => {
+    const { label } = req.body;
+    if(!label) {
+        // clear all table
+        db.run('DELETE FROM chart_data', (err) => {
+            if(err) {
+                console.error(err.message);
+                res.status(500).json({error: 'Internal Server Error'});
+            }
+            else
+            {
+                res.json({message: 'All data removed successfully'});
+            }
+        });
+        return;
+    }
+
+    db.run('DELETE FROM chart_data WHERE label=?', [label], (err) => {
+        if(err) {
+            console.error(err.message);
+            res.status(500).json({error: 'Internal Server Error'});
+        }
+        else
+        {
+            res.json({message: 'Data removed successfully'});
+        }
+    });
+
+})
+
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });

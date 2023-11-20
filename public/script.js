@@ -1,6 +1,6 @@
 const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
-    type: 'radar', //line, bar, pie, radar, doughnut, scatter
+    type: 'line', //line, bar, pie, radar, doughnut, scatter
     data: {
         labels: [],
         datasets: [{
@@ -91,4 +91,23 @@ function addData() {
             document.getElementById('newValue').value = '';
         })
         .catch(error => console.error('Error adding data:', error));
+}
+
+function clearData() {
+    // Add new data to the server
+    fetch('/api/data/clear', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        // TODO make possible eventually
+        // body: JSON.stringify({
+        //     label: newLabel,
+        // }),
+    })
+    .then(response => response.json())
+    .then(() => {
+        fetchData();
+    })
+    .catch(error => console.error('Error adding data:', error));
 }
