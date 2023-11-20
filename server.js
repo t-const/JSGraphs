@@ -7,7 +7,7 @@ const port = 3000;
 // SQLite database setup
 const db = new sqlite3.Database('data.db');
 db.serialize(() => {
-    db.run('CREATE TABLE IF NOT EXISTS chart_data (label TEXT, value INTEGER)');
+    db.run('CREATE TABLE IF NOT EXISTS chart_data (label TEXT, value INTEGER, ts TIMESTAMP)');
 });
 
 app.use(express.json());
@@ -35,7 +35,7 @@ app.post('/api/data', (req, res) => {
         return;
     }
 
-    db.run('INSERT INTO chart_data (label, value) VALUES (?, ?)', [label, value], (err) => {
+    db.run('INSERT INTO chart_data (label, value, ts) VALUES (?, ?, CURRENT_TIMESTAMP)', [label, value], (err) => {
         if (err) {
             console.error(err.message);
             res.status(500).json({ error: 'Internal Server Error' });

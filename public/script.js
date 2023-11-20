@@ -1,6 +1,6 @@
 const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
-    type: 'line', //line, bar, pie, radar, doughnut, scatter
+    type: 'bar', //line, bar, pie, radar, doughnut, scatter
     data: {
         labels: [],
         datasets: [{
