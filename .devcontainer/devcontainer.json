@@ -17,6 +17,18 @@
 
 	// Uncomment the next line to run commands after the container is created.
 	"postCreateCommand": "cd graph-app; npm install; node server.js",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"formulahendry.auto-rename-tag",
+				"xabikos.JavaScriptSnippets",
+				"mgmcdermott.vscode-language-babel",
+				"mhutchie.git-graph",
+				"Zignd.html-css-class-completion",
+				"ms-vscode.js-debug-nightly"
+			]
+		}
+	},
 
 	// Configure tool-specific properties.
 	// "customizations": {},
