@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Display Example</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="myChart" width="400" height="200"></canvas>
+    <div>
+        <form id="dataForm">
+            <label for="newLabel">Label:</label>
+            <input type="text" id="newLabel" required>
+            <label for="newValue">Value:</label>
+            <input type="number" id="newValue" required>
+            <button type="button" onclick="addData()">Add Data</button>
+            <button type="button" onclick="clearData()">Clear All</button>
+        </form>
+    
+        <hr class="solid">
+        <div>
+            <button type="button" onclick="toggleDarkTheme()">Toggle Dark Theme</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
